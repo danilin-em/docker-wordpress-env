@@ -1,0 +1,15 @@
+version: '3.6'
+
+services: 
+  app:
+    image: ${REPO:-localhost}/${NAME:-wp-base}:${V:-latest}
+    build: .
+    volumes: 
+      - ./src:/var/www/html/wp-content/${TYPE:-theme}s/${NAME:-main}
+    ports:
+      - ${PORT:-8080}:80
+    environment:
+      WORDPRESS_CONFIG_EXTRA: |
+        define( 'WP_DEBUG_LOG', true );
+        define( 'WP_DEBUG_DISPLAY', true );
+      WORDPRESS_DEBUG: 1 
