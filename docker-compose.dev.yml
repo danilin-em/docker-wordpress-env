@@ -2,7 +2,7 @@ version: '3.6'
 
 services: 
   app:
-    image: ${REPO:-localhost}/${NAME:-wp-base}:${V:-latest}
+    image: ${REPO:-localhost}/${PROJECT:-wp-base}:${V:-latest}
     build: .
     volumes: 
       - ./${SRC:-src}/${NAME:-main}:/var/www/html/wp-content/${TYPE:-themes}/${NAME:-main}
