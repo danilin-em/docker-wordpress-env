@@ -5,7 +5,7 @@ services:
     image: ${REPO:-localhost}/${NAME:-wp-base}:${V:-latest}
     build: .
     volumes: 
-      - ./${SRC:-src}:/var/www/html/wp-content/${TYPE:-theme}s/${NAME:-main}
+      - ./${SRC:-src}/${NAME:-main}:/var/www/html/wp-content/${TYPE:-themes}/${NAME:-main}
     ports:
       - ${PORT:-8080}:80
     environment:
